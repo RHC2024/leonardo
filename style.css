@@ -129,12 +129,12 @@ header .logo {
     }
 
     .grid {
-        grid-template-columns: 1fr; /* 1 column layout */
-        grid-auto-rows: 30vh; /* Even larger rows */
+        grid-template-columns: repeat(3, 1fr); /* 1 column layout */
+        grid-auto-rows: 10vh; /* Even larger rows */
     }
 
     .grid-item img {
-        width: 80vw; /* Full width images */
+        width: 10vw; /* Full width images */
     }
 
     .product-grid {
