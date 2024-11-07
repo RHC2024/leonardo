@@ -1,4 +1,4 @@
-/* Style dasar */
+/* Global Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,7 +27,7 @@ header .logo {
     width: 12vw; /* Adjust logo width */
     height: auto; /* Keep aspect ratio */
     margin-bottom: 10px; /* Space between logo and header title */
-	filter: brightness(0) invert(1); /* Makes dark colors light (white) */
+    filter: brightness(0) invert(1); /* Makes dark colors light (white) */
 }
 
 /* Slideshow Container */
@@ -37,9 +37,10 @@ header .logo {
     align-items: center;
     overflow: hidden;
     position: relative;
-	height: 100vh; /* Full screen height */
+    height: 100vh; /* Full screen height */
     width: 100vw;  /* Full screen width */
 }
+
 .slideshow img {
     width: 40vw; /* Full screen width */
     max-width: none; /* Remove max-width limit */
@@ -58,56 +59,85 @@ header .logo {
     display: flex;
     justify-content: center;
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 kolom */
     grid-auto-rows: 20vh; /* Tinggi baris otomatis */
     gap: 1vw;
 }
+
 .grid-item img {
-	
     width: 20vh;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s;
 }
+
 .grid-item img:hover {
     transform: scale(1.05); /* Zoom in efek */
 }
 
-/* Responsif untuk layar lebih kecil (misalnya, perangkat tablet atau HP) */
-@media (max-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 kolom pada layar tablet */
-    }
-}
+/* Media Queries for Mobile */
+@media only screen and (max-width: 768px) {
 
-/* Responsif untuk layar ponsel pintar (max-width: 768px) */
-@media (max-width: 768px) {
+    header h1 {
+        font-size: 8vw; /* Increase title size for smaller screens */
+    }
+
+    header .logo {
+        width: 30vw; /* Make logo larger on mobile */
+    }
+
+    /* Slideshow Adjustments */
+    .slideshow img {
+        width: 70vw; /* Make slideshow images responsive */
+        border-radius: 3vh; /* Slightly round edges */
+    }
+
+    /* Grid Layout Adjustments */
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        grid-auto-rows: 25vh; /* Adjust row height */
+    }
+
+    .grid-item img {
+        width: 40vw; /* Increase image size on mobile */
+        height: auto;
+    }
+
     .product-grid {
-        padding: 5vh; /* Mengurangi padding untuk layar kecil */
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom pada layar ponsel */
-        gap: 2vw; /* Memperbesar jarak antar item agar lebih nyaman */
-    }
-
-    .grid-item img {
-        width: 100%; /* Menyesuaikan lebar gambar agar proporsional */
+        padding: 5vh; /* Reduce padding */
     }
 }
 
-/* Responsif untuk layar ponsel dengan ukuran lebih kecil (max-width: 480px) */
-@media (max-width: 480px) {
+/* Additional Styling for Very Small Devices */
+@media only screen and (max-width: 480px) {
+
+    header h1 {
+        font-size: 10vw; /* Further increase title size */
+    }
+
+    header .logo {
+        width: 40vw; /* Make logo even larger on very small screens */
+    }
+
+    /* Slideshow Adjustments */
+    .slideshow img {
+        width: 90vw; /* Take almost full width */
+    }
+
     .grid {
-        grid-template-columns: 1fr; /* 1 kolom pada layar ponsel kecil */
-        gap: 4vw; /* Memberi jarak antar gambar yang lebih besar */
+        grid-template-columns: 1fr; /* 1 column layout */
+        grid-auto-rows: 30vh; /* Even larger rows */
     }
 
     .grid-item img {
-        width: 100%; /* Lebar gambar 100% dari kolom */
-        height: auto; /* Menghindari pemotongan gambar */
+        width: 80vw; /* Full width images */
+    }
+
+    .product-grid {
+        padding: 3vh; /* Minimal padding for small screens */
     }
 }
