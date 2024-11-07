@@ -15,16 +15,16 @@ header {
     padding: 20px;
     background-color: #77965f;
     color: white;
-    font-size: 14px; /* Adjust the font size for the general header text */
+    font-size: 1.5vh; /* Adjust the font size for the general header text */
 }
 
 header h1 {
     margin-bottom: 10px;
-    font-size: 50px; /* Adjust the font size for the header title */
+    font-size: 5vh; /* Adjust the font size for the header title */
 }
 
 header .logo {
-    width: 150px; /* Adjust logo width */
+    width: 15vw; /* Adjust logo width */
     height: auto; /* Keep aspect ratio */
     margin-bottom: 10px; /* Space between logo and header title */
 	filter: brightness(0) invert(1); /* Makes dark colors light (white) */
@@ -54,20 +54,20 @@ header .logo {
 
 /* Grid Layout */
 .product-grid {
-    padding: 20px;
+    padding: 10vh;
     display: flex;
     justify-content: center;
 }
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 kolom */
-    grid-auto-rows: 500px; /* Tinggi baris otomatis */
+    grid-auto-rows: 20vh; /* Tinggi baris otomatis */
     gap: 10px;
 }
 .grid-item img {
 	
-    width: 500px;
-    height: 500px;
+    width: 20vh;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s;
