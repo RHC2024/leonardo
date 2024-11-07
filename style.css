@@ -1,0 +1,77 @@
+/* Style dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #77965f;
+    color: white;
+    font-size: 14px; /* Adjust the font size for the general header text */
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 50px; /* Adjust the font size for the header title */
+}
+
+header .logo {
+    width: 150px; /* Adjust logo width */
+    height: auto; /* Keep aspect ratio */
+    margin-bottom: 10px; /* Space between logo and header title */
+	filter: brightness(0) invert(1); /* Makes dark colors light (white) */
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+	height: 100vh; /* Full screen height */
+    width: 100vw;  /* Full screen width */
+}
+.slideshow img {
+    width: 50vw; /* Full screen width */
+    max-width: none; /* Remove max-width limit */
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+}
+
+/* Gerakan saat mouse bergerak */
+.slideshow-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Grid Layout */
+.product-grid {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom */
+    grid-auto-rows: 500px; /* Tinggi baris otomatis */
+    gap: 10px;
+}
+.grid-item img {
+	
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+.grid-item img:hover {
+    transform: scale(1.05); /* Zoom in efek */
+}
