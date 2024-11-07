@@ -62,7 +62,7 @@ header .logo {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 kolom */
+    grid-template-columns: repeat(3, 1fr); /* 5 kolom */
     grid-auto-rows: 20vh; /* Tinggi baris otomatis */
     gap: 1vw;
 }
