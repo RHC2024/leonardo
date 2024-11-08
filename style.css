@@ -62,21 +62,67 @@ header .logo {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 5 kolom */
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom */
     grid-auto-rows: 20vh; /* Tinggi baris otomatis */
     gap: 1vw;
 }
 
+.grid-item {
+    position: relative;
+    overflow: hidden; /* Agar ripple tetap di dalam elemen */
+    cursor: pointer;
+}
+
+/* Gambar di dalam grid-item */
 .grid-item img {
-    width: 20vh;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.3s;
 }
 
 .grid-item img:hover {
-    transform: scale(1.05); /* Zoom in efek */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Deskripsi produk */
+.product-description {
+    opacity: 0; /* Deskripsi mulai tersembunyi */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Posisi di tengah */
+    color: black;
+    font-size: 16px;
+    font-weight: bold; /* Font default tidak tebal */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+    pointer-events: none; /* Agar deskripsi tidak menghalangi ripple */
+}
+
+/* Ripple effect */
+.grid-item .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4); /* Warna ripple */
+    pointer-events: none;
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    z-index: 0; /* Agar ripple di bawah deskripsi dan gambar */
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(5); /* Ukuran maksimum ripple */
+        opacity: 0;
+    }
+}
+
+
+/* Tampilkan teks saat mouse bergerak di atas elemen */
+.grid-item.mousemove .product-description {
+    display: flex; /* Tampilkan teks dengan display flex */
 }
 
 /* Media Queries for Mobile */
@@ -98,8 +144,9 @@ header .logo {
 
     /* Grid Layout Adjustments */
     .grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        grid-template-columns: repeat(2,1fr); /* 2 columns on mobile */
         grid-auto-rows: 25vh; /* Adjust row height */
+		
     }
 
     .grid-item img {
@@ -115,29 +162,37 @@ header .logo {
 /* Additional Styling for Very Small Devices */
 @media only screen and (max-width: 480px) {
 
+    /* Menyesuaikan ukuran font judul */
     header h1 {
-        font-size: 10vw; /* Further increase title size */
+        font-size: 6vw; /* Ukuran font lebih besar pada layar kecil */
     }
 
+    /* Menyesuaikan ukuran logo */
     header .logo {
-        width: 40vw; /* Make logo even larger on very small screens */
+        width: 35vw; /* Logo lebih besar pada layar kecil */
     }
 
-    /* Slideshow Adjustments */
+    /* Penyesuaian untuk slideshow gambar */
     .slideshow img {
-        width: 90vw; /* Take almost full width */
+        width: 90vw; /* Gambar slideshow hampir memenuhi lebar layar */
     }
 
+    /* Grid layout dengan 3 kolom */
     .grid {
-        grid-template-columns: repeat(3, 1fr); /* 1 column layout */
-        grid-auto-rows: 30vh; /* Even larger rows */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk perangkat kecil */
+        grid-gap: 1vw; /* Memberikan jarak antar item grid */
+        grid-auto-rows: 21vh; /* Tinggi baris yang lebih besar */
     }
 
+    /* Gambar dalam grid-item */
     .grid-item img {
-        width: 30vw; /* Full width images */
+        width: 100%; /* Memastikan gambar memenuhi lebar grid-item */
+        object-fit: cover; /* Memastikan gambar tetap terpotong dengan baik */
     }
 
+    /* Grid untuk produk */
     .product-grid {
-        padding: 3vh; /* Minimal padding for small screens */
+        padding: 3vh; /* Padding minimal untuk ruang lebih lega pada layar kecil */
     }
 }
