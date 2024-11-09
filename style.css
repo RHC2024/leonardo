@@ -55,22 +55,26 @@ header .logo {
 
 /* Grid Layout */
 .product-grid {
-    padding: 10vh;
+    padding: 5vh;
     display: flex;
     justify-content: center;
+	width: 100%;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 kolom */
-    grid-auto-rows: 20vh; /* Tinggi baris otomatis */
+    grid-auto-rows: 1fr; /* Tinggi baris otomatis */
     gap: 1vw;
+	width: 100%; /* Memastikan grid memenuhi container */
+    max-width: 100%; /* Maksimal lebar grid */
 }
 
 .grid-item {
     position: relative;
     overflow: hidden; /* Agar ripple tetap di dalam elemen */
     cursor: pointer;
+	aspect-ratio: 1; /* Menjaga rasio lebar dan tinggi tetap 1:1 (kotak) */
 }
 
 /* Gambar di dalam grid-item */

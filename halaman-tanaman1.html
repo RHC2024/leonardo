@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonsai - Tanaman Hias</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya dasar halaman */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Menghindari scroll horizontal */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            padding-bottom: 50px; /* Memberikan ruang di bawah konten */
+        }
+
+        .product-info {
+            flex: 1;
+            padding: 1rem;
+            max-width: 48%;
+            position: relative;
+        }
+
+        .product-info h2 {
+            color: #333;
+        }
+
+        .product-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .product-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .product-info ul li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Efek transform saat mouse hover */
+        }
+
+        .product-info img:hover {
+            transform: scale(1.05); /* Efek zoom saat hover */
+        }
+
+        /* Efek parallax saat scroll */
+        .parallax-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            pointer-events: none; /* Gambar tidak mengganggu interaksi */
+            transition: transform 0.1s ease-out;
+        }
+
+        .back-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #555;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-info {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Tanaman Hias Bonsai</h1>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Gambar dan informasi produk -->
+        <div class="product-info">
+            <img src="product1.jpeg" alt="Tanaman Bonsai" class="parallax-img" id="parallax-img">
+        </div>
+
+        <!-- Deskripsi produk -->
+        <div class="product-info">
+            <h2>Bonsai</h2>
+            <p>Bonsai adalah seni menumbuhkan pohon miniatur dalam pot yang sangat populer di Jepang. Dengan perawatan yang tepat, bonsai dapat bertahan lama dan terus berkembang. Bonsai adalah tanaman hias yang membutuhkan perhatian khusus dalam hal pemangkasan, penyiraman, dan pemberian pupuk.</p>
+
+            <h3>Manfaat Bonsai</h3>
+            <ul>
+                <li>Menambah keindahan ruangan atau taman</li>
+                <li>Meningkatkan kualitas udara di sekitarnya</li>
+                <li>Menurunkan stres dan meningkatkan ketenangan</li>
+                <li>Sarapan meditasi dan fokus dalam perawatannya</li>
+            </ul>
+
+            <h3>Cara Merawat Bonsai</h3>
+            <ul>
+                <li>Letakkan bonsai di tempat yang cukup sinar matahari, namun tidak terlalu terik.</li>
+                <li>Penyiraman secara rutin, jangan biarkan tanah kering sepenuhnya.</li>
+                <li>Pangkas cabang-cabang yang tidak perlu untuk mempertahankan bentuknya.</li>
+                <li>Gunakan pupuk khusus bonsai untuk memberikan nutrisi yang optimal.</li>
+            </ul>
+
+            <a href="index.html" class="back-button">Kembali ke Halaman Utama</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript untuk efek parallax saat scroll
+        window.addEventListener('scroll', function () {
+            var scrollPosition = window.scrollY; // Posisi scroll vertikal
+            var parallaxImg = document.getElementById('parallax-img');
+
+            // Menambahkan efek parallax dengan memindahkan gambar sesuai dengan scroll
+            parallaxImg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
+    </script>
+
+</body>
+</html>
