@@ -8,6 +8,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
+p {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
 
 /* Header */
 header {
@@ -28,6 +32,12 @@ header .logo {
     height: auto; /* Keep aspect ratio */
     margin-bottom: 10px; /* Space between logo and header title */
     filter: brightness(0) invert(1); /* Makes dark colors light (white) */
+}
+
+h2 {
+    margin-bottom: 10px;
+    font-size: 5vh; /* Adjust the font size for the header title */
+	text-align: center;
 }
 
 /* Slideshow Container */

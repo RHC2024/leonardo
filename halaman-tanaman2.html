@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Burung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #87CEEB; /* Warna langit biru */
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Agar gambar tidak keluar dari viewport */
+        }
+
+        header {
+            background-color: #333;
+            padding: 1rem;
+            color: white;
+        }
+
+        /* Gambar Burung */
+        .bird {
+            position: absolute;
+            top: 50%;
+            left: -150px; /* Posisi awal di luar layar */
+            width: 100px;
+            height: auto;
+            animation: fly 5s linear infinite;
+        }
+
+        /* Animasi Burung Terbang */
+        @keyframes fly {
+            0% {
+                left: -150px;
+                top: 50%; /* Posisi awal di tengah layar vertikal */
+            }
+            25% {
+                left: 25%;
+                top: 45%; /* Posisi burung sedikit ke atas */
+            }
+            50% {
+                left: 50%;
+                top: 40%; /* Posisi burung lebih tinggi */
+            }
+            75% {
+                left: 75%;
+                top: 45%; /* Posisi burung sedikit ke bawah */
+            }
+            100% {
+                left: 100%; /* Burung bergerak keluar dari kanan layar */
+                top: 50%; /* Kembali ke posisi tengah vertikal */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Animasi Burung Terbang</h1>
+    </header>
+
+    <!-- Gambar Burung -->
+    <img src="bird.png" alt="Burung Terbang" class="bird">
+
+</body>
+</html>

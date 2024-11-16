@@ -44,7 +44,7 @@ document.addEventListener('mousemove', (e) => {
         const distance = Math.sqrt(Math.pow(mouseX - itemX, 2) + Math.pow(mouseY - itemY, 2));
 
         // Jika jarak lebih kecil dari threshold, hilangkan gambar dan tampilkan deskripsi
-        const threshold = 50; // Ubah sesuai keinginan
+        const threshold = 150; // Ubah sesuai keinginan
         if (distance < threshold) {
             const img = item.querySelector('img');
             img.style.opacity = '0';

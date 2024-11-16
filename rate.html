@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tingkat Kebutuhan Air Tanaman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 28px;
+        }
+
+        .water-levels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .level {
+            width: 28%;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Kebutuhan Air - Sedikit */
+        .level-low {
+            background-color: #003366;
+        }
+
+        .level-medium {
+            background-color: #3366cc;
+        }
+
+        .level-high {
+            background-color: #66ccff;
+        }
+
+        .level img {
+            width: 50px;  /* Ukuran ikon air */
+            margin-right: 10px;
+        }
+
+        .level-text {
+            font-size: 18px;
+        }
+
+        /* Responsif: Agar tampilannya bagus pada perangkat kecil */
+        @media (max-width: 768px) {
+            .level {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .level img {
+                width: 40px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Tingkat Kebutuhan Air Tanaman Berdasarkan Logo Air</h1>
+        
+        <div class="water-levels">
+            <!-- Sedikit Air -->
+            <div class="level level-low">
+                <!-- Ikon air putih -->
+                <img src="logo-air-putih.png" alt="Air Sedikit">
+                <div class="level-text">Air: Sedikit</div>
+            </div>
+
+            <!-- Moderat Air -->
+            <div class="level level-medium">
+                <!-- Ikon air putih -->
+                <img src="logo air.png" alt="Air Moderat">
+                <div class="level-text">Air: Moderat</div>
+            </div>
+
+            <!-- Banyak Air -->
+            <div class="level level-high">
+                <!-- Ikon air putih -->
+                <img src="logo air.png" alt="Air Banyak">
+                <div class="level-text">Air: Banyak</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
