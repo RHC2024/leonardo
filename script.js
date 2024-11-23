@@ -1,31 +1,21 @@
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slideshow img');
+// Wait for the page to fully load 
+window.addEventListener('load', () => {
+  // Select the intro and home elements
+  const intro = document.getElementById('intro');
+  const home = document.getElementById('home');
 
-// Fungsi untuk menampilkan slide
-function showSlides() {
-    slides.forEach(slide => slide.style.display = 'none'); // Sembunyikan semua gambar
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; } // Ulangi dari slide pertama
-    slides[slideIndex - 1].style.display = 'block';
-    setTimeout(showSlides, 3000); // Ganti slide setiap 3 detik
-}
+  // Initially prevent scrolling by setting overflow hidden
+  document.body.style.overflow = 'hidden';
 
-// Efek Gerakan Mouse
-const slideshow = document.getElementById('slideshow');
-slideshow.addEventListener('mousemove', (e) => {
-    const { offsetX, offsetY } = e;
-    const { clientWidth, clientHeight } = slideshow;
-    const xPos = (offsetX / clientWidth) - 0.5;
-    const yPos = (offsetY / clientHeight) - 0.5;
+  // Hide intro and show home after 3 seconds
+  setTimeout(() => {
+    intro.classList.add('hidden'); // Hide intro with fade-out
+    home.classList.add('visible'); // Show home content
 
-    slides.forEach(slide => {
-        slide.style.transform = `translate(${xPos * 20}px, ${yPos * 20}px)`;
-    });
+    // Enable scrolling after intro is hidden
+    document.body.style.overflow = 'auto'; // Allow scrolling after intro fades out
+  }, 3000); // 3000ms delay (3 seconds)
 });
-
-showSlides();
-
-
 
 
 const gridItems = document.querySelectorAll('.grid-item');
@@ -60,4 +50,3 @@ document.addEventListener('mousemove', (e) => {
         }
     });
 });
-
